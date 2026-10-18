@@ -56,7 +56,7 @@ export function ReelsGrid({ reels }: { reels: Reel[] }) {
     const gap = Number.parseFloat(style.columnGap || style.gap || '16') || 16;
     const step = (firstCard.getBoundingClientRect().width + gap) * cardsPerView;
     const nextPage = Math.max(0, Math.min(maxPage, page + direction * cardsPerView));
-    track.scrollTo({ left: nextPage * (firstCard.getBoundingClientRect().width + gap), behavior: 'smooth' });
+    track.scrollTo({ left: nextPage * step, behavior: 'smooth' });
     setPage(nextPage);
   };
 
