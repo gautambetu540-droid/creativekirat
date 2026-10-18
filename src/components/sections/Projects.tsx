@@ -28,7 +28,7 @@ export function Projects() {
             const initials = project.name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase();
             return (
               <Reveal as="li" key={project.name} delay={0.06 * (i % 3)} className="h-full">
-                <GlowCard className="h-full min-h-[22rem] p-7">
+                <GlowCard className="h-full min-h-[24rem] p-7">
                   <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between gap-4">
                     {project.logo ? (
@@ -53,13 +53,13 @@ export function Projects() {
                     )}
                     <FolderKanban className="h-5 w-5 text-navy-700 transition-colors duration-300 group-hover:text-aqua" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-7 break-words text-xl font-semibold tracking-tight text-ink">{project.name}</h3>
+                  <h3 className="mt-6 min-h-[3.5rem] break-words text-xl font-semibold tracking-tight text-ink">{project.name}</h3>
                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-aqua">{project.category}</p>
                   {project.description ? (
-                    <p className="mt-4 text-sm leading-relaxed text-mist">{project.description}</p>
+                    <p className="mt-4 min-h-[3.25rem] text-sm leading-relaxed text-mist">{project.description}</p>
                   ) : null}
                   {project.tags.length > 0 ? (
-                    <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${project.name} tags`}>
+                    <ul className="mt-5 flex min-h-7 flex-wrap content-start gap-2" aria-label={`${project.name} tags`}>
                       {project.tags.map((t) => (
                         <li key={t} className="rounded-full border border-navy-700 px-3 py-1 text-xs text-mist">
                           {t}
@@ -78,7 +78,7 @@ export function Projects() {
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </a>
                   ) : (
-                    <p className="mt-auto pt-6 text-xs text-mist">Project link coming soon</p>
+                    <p className="mt-auto flex min-h-[44px] items-center pt-2 text-xs text-mist">Project link coming soon</p>
                   )}
                   </div>
                 </GlowCard>
