@@ -56,7 +56,7 @@ export function GlowCard({ children, className, tilt = false, as = 'article' }: 
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-aqua/0 blur-3xl transition-colors duration-500 group-hover:bg-aqua/15"
       />
-      <div className="relative z-[2]">{children}</div>
+      <div className="relative z-[2] h-full">{children}</div>
     </Component>
   );
 }
