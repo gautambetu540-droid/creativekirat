@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
@@ -8,12 +7,6 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { MotionProvider } from '@/components/ui/MotionProvider';
 import { siteConfig } from '@/config/site';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -34,7 +27,6 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     locale: siteConfig.locale,
-    // og:image is provided by src/app/opengraph-image.tsx
   },
   twitter: {
     card: 'summary_large_image',
@@ -58,8 +50,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans">
+    <html lang="en">
+      <body>
         <JsonLd />
         <SkipLink />
         <MotionProvider>
