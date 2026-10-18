@@ -38,7 +38,7 @@ export const ReelCard = forwardRef<HTMLButtonElement, ReelCardProps>(function Re
         onFocus={onWarm}
         aria-label={`Watch ${reel.title} — opens preview`}
         aria-haspopup="dialog"
-        className="glow-border group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl border border-navy-700 bg-navy-800 text-left transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] motion-reduce:transform-none motion-reduce:hover:scale-100"
+        className="glow-border group relative block aspect-[9/16] w-full overflow-hidden rounded-2xl border border-navy-700 bg-navy-800 text-left transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 motion-reduce:transform-none"
       >
         {reel.thumbnail ? (
           <Image
