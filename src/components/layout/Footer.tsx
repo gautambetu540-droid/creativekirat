@@ -56,6 +56,17 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-3 pt-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} {siteConfig.name}. All rights reserved.</p>
+          <p>
+            Built by{' '}
+            <a
+              href="https://www.linkedin.com/in/sudhanshu-g-512937375/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-aqua underline-offset-4 transition-colors hover:text-ink hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aqua"
+            >
+              Sudhanshu
+            </a>
+          </p>
           <a href="#home" className="inline-flex min-h-[40px] items-center gap-2 self-start font-medium text-mist transition-colors hover:text-aqua sm:self-auto">
             Back to top <span aria-hidden="true">↑</span>
           </a>
