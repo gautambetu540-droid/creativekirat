@@ -46,7 +46,7 @@ export function Experience() {
                     </h3>
                     <ul className="mt-5 grid grid-cols-1 gap-3">
                       {item.responsibilities.map((r) => (
-                        <li key={r} className="flex gap-3 text-sm leading-relaxed text-mist md:text-[0.95rem]">
+                        <li key={r} className="flex gap-3 text-sm leading-relaxed text-mist md:text-base">
                           <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-electric" />
                           {r}
                         </li>
