@@ -18,6 +18,8 @@ export type Reel = {
 export type Project = {
   name: string;
   category: string;
+  /** Local logo asset path when the repository has a matching brand image. */
+  logo: string | null;
   /** Only verified description. Empty string => not shown. */
   description: string;
   /** null => hide external link */
