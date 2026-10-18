@@ -1,4 +1,5 @@
 import { ArrowUpRight, FolderKanban } from 'lucide-react';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { GlowCard } from '@/components/ui/GlowCard';
 import { Reveal } from '@/components/ui/Reveal';
@@ -28,13 +29,21 @@ export function Projects() {
             return (
               <Reveal as="li" key={project.name} delay={0.06 * (i % 3)}>
                 <GlowCard className="flex h-full min-h-[15rem] flex-col p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <span
-                      aria-hidden="true"
-                      className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-navy-700 bg-gradient-to-br from-navy-950 to-navy-800 text-lg font-bold tracking-tight text-ink"
-                    >
-                      {initials}
-                    </span>
+                  <div className="flex items-center justify-between gap-4">
+                    {project.logo ? (
+                      <a
+                        href={project.url ?? undefined}
+                        {...(project.url ? externalLinkProps : {})}
+                        aria-label={project.url ? `Visit ${project.name} website (opens in a new tab)` : `${project.name} logo`}
+                        className="relative flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-2xl border border-navy-700/80 bg-white p-2.5 transition-transform duration-300 group-hover:scale-[1.03]"
+                      >
+                        <Image src={project.logo} alt={`${project.name} logo`} fill sizes="72px" className="object-contain p-2" />
+                      </a>
+                    ) : (
+                      <span aria-hidden="true" className="inline-flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-navy-700 bg-gradient-to-br from-navy-950 to-navy-800 text-lg font-bold tracking-tight text-ink">
+                        {initials}
+                      </span>
+                    )}
                     <FolderKanban className="h-5 w-5 text-navy-700 transition-colors duration-300 group-hover:text-aqua" aria-hidden="true" />
                   </div>
                   <h3 className="mt-7 break-words text-xl font-semibold tracking-tight text-ink">{project.name}</h3>
@@ -56,12 +65,14 @@ export function Projects() {
                       href={project.url}
                       {...externalLinkProps}
                       aria-label={`${projectsContent.visitLabel}: ${project.name} (opens in a new tab)`}
-                      className="mt-auto inline-flex min-h-[44px] items-center gap-1.5 pt-6 text-sm font-semibold text-ink hover:text-aqua"
+                      className="mt-auto mt-6 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-electric/40 bg-electric/10 px-4 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-aqua/70 hover:bg-electric/20"
                     >
                       {projectsContent.visitLabel}
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                     </a>
-                  ) : null}
+                  ) : (
+                    <p className="mt-auto pt-6 text-xs text-mist">Project link coming soon</p>
+                  )}
                 </GlowCard>
               </Reveal>
             );
