@@ -74,10 +74,10 @@ export function ReelsGrid({ reels }: { reels: Reel[] }) {
             </li>
           ))}
         </ul>
-        <div className="mt-4 flex items-center justify-between gap-4">
-          <p className="text-xs text-mist sm:text-sm">Swipe to explore more reels</p>
-          <div className="flex gap-2">
-            <button type="button" onClick={() => move(-1)} aria-label="Previous reels" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-ink transition-colors hover:border-aqua/60 disabled:cursor-not-allowed disabled:opacity-40" disabled={page <= 0}>
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-7">
+          <p className="text-sm text-mist">Swipe or use the controls to explore more reels</p>
+          <div className="flex items-center justify-center gap-3">
+            <button type="button" onClick={() => move(-1)} aria-label="Previous reels" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-aqua/40 bg-navy-900 text-ink shadow-[0_0_20px_rgba(34,211,238,0.08)] transition-colors hover:border-aqua hover:bg-navy-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-aqua disabled:cursor-not-allowed disabled:opacity-40" disabled={page <= 0}>
               <ChevronLeft className="h-5 w-5" aria-hidden="true" />
             </button>
             <button type="button" onClick={() => move(1)} aria-label="Next reels" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy-700 bg-navy-900 text-ink transition-colors hover:border-aqua/60 disabled:cursor-not-allowed disabled:opacity-40" disabled={page >= maxPage}>
