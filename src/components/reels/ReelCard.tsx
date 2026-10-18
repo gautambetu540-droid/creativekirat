@@ -1,7 +1,7 @@
 'use client';
 
 import { m } from 'framer-motion';
-import { Clapperboard, Instagram, Play } from 'lucide-react';
+import { Clapperboard, Play } from 'lucide-react';
 import Image from 'next/image';
 import { forwardRef } from 'react';
 import { getReelEmbedUrl } from '@/lib/reel-utils';
@@ -51,7 +51,6 @@ export const ReelCard = forwardRef<HTMLButtonElement, ReelCardProps>(function Re
             tabIndex={-1}
             aria-hidden="true"
             referrerPolicy="strict-origin-when-cross-origin"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             className="pointer-events-none absolute left-1/2 top-1/2 h-[115%] w-[115%] -translate-x-1/2 -translate-y-1/2 border-0 bg-white"
           />
         )}
