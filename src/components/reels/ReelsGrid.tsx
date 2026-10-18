@@ -69,7 +69,7 @@ export function ReelsGrid({ reels }: { reels: Reel[] }) {
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5"
         >
           {reels.map((reel, i) => (
-            <li key={reel.id} data-reel-card className="w-[86%] shrink-0 snap-start min-[420px]:w-[72%] sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3.75rem)/4)]">
+            <li key={reel.id} data-reel-card className="w-full shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3.75rem)/4)]">
               <ReelCard reel={reel} index={i} onOpen={open} onWarm={preconnectInstagram} />
             </li>
           ))}
