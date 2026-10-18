@@ -13,7 +13,7 @@ export function Hero() {
       aria-labelledby="home-heading"
       className="relative isolate flex items-start overflow-hidden bg-navy-950 pb-10 pt-[calc(var(--nav-height)+1.5rem)] sm:min-h-[88svh] sm:items-center sm:pb-24 sm:pt-[calc(var(--nav-height)+3rem)] lg:min-h-[min(850px,100svh)]"
     >
-      {/* Desktop/tablet: portrait as full background. On mobile the image sits in the content flow below. */}
+      {/* Portrait background is shown on tablet/desktop only; mobile stays text-first. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 hidden bg-no-repeat sm:block sm:bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] sm:bg-cover sm:bg-[position:60%_center]"
@@ -58,14 +58,6 @@ export function Hero() {
             <p className="mx-auto mt-4 max-w-md text-[0.95rem] leading-relaxed text-slate-200 sm:mx-0 sm:mt-7 sm:max-w-xl sm:text-base md:text-lg">
               {supporting}
             </p>
-          </HeroFade>
-
-          {/* Mobile-only portrait, between text and CTAs */}
-          <HeroFade delay={0.4} className="w-full sm:hidden">
-            <div
-              aria-hidden="true"
-              className="mx-auto mt-6 h-[300px] w-full max-w-[360px] bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-contain bg-bottom bg-no-repeat"
-            />
           </HeroFade>
 
           {/* CTA: glass card on mobile, plain row on larger screens */}
