@@ -11,43 +11,80 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="home-heading"
-      className="relative isolate flex min-h-[790px] items-start overflow-hidden bg-navy-950 pb-64 pt-[calc(var(--nav-height)+2rem)] sm:min-h-[88svh] sm:items-center sm:pb-24 sm:pt-[calc(var(--nav-height)+3rem)] lg:min-h-[min(850px,100svh)]"
+      className="relative isolate flex items-start overflow-hidden bg-navy-950 pb-10 pt-[calc(var(--nav-height)+1.5rem)] sm:min-h-[88svh] sm:items-center sm:pb-24 sm:pt-[calc(var(--nav-height)+3rem)] lg:min-h-[min(850px,100svh)]"
     >
-      {/* Kirat's supplied portrait is the hero visual; keep the face on the right and text on the left. */}
+      {/* Desktop/tablet: portrait as full background. On mobile the image sits in the content flow below. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-no-repeat bg-[length:auto_44%] bg-[position:78%_bottom] sm:bg-cover sm:bg-[position:60%_center]"
+        className="pointer-events-none absolute inset-0 -z-10 hidden bg-no-repeat sm:block sm:bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] sm:bg-cover sm:bg-[position:60%_center]"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-[linear-gradient(180deg,#061426_0%,rgba(6,20,38,0.98)_44%,rgba(6,20,38,0.42)_72%,#061426_100%)] sm:bg-gradient-to-r sm:from-[#061426] sm:via-[#061426]/95 sm:to-[#061426]/10" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-t from-[#061426] via-transparent to-[#061426]/15" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-[radial-gradient(ellipse_at_75%_45%,transparent_10%,rgba(6,20,38,0.12)_72%)]" />
+
+      {/* Mobile ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-[5] bg-[radial-gradient(ellipse_at_50%_55%,rgba(59,130,246,0.22)_0%,transparent_65%)] sm:hidden"
+      />
+
+      {/* Desktop/tablet overlays */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-[5] hidden sm:block sm:bg-gradient-to-r sm:from-[#061426] sm:via-[#061426]/95 sm:to-[#061426]/10"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-[5] hidden bg-gradient-to-t from-[#061426] via-transparent to-[#061426]/15 sm:block"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-[5] hidden bg-[radial-gradient(ellipse_at_75%_45%,transparent_10%,rgba(6,20,38,0.12)_72%)] sm:block"
+      />
 
       <Container className="relative z-10 w-full">
-        <div className="max-w-2xl sm:max-w-2xl lg:max-w-[48%]">
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center sm:mx-0 sm:items-start sm:text-left lg:max-w-[48%]">
           <HeroFade>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/55 px-4 py-1.5 text-xs font-semibold tracking-[0.08em] text-aqua shadow-lg backdrop-blur-md sm:text-xs">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/55 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.08em] text-aqua shadow-lg backdrop-blur-md sm:px-4 sm:text-xs">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               {label}
             </p>
           </HeroFade>
 
-          <HeroHeadline id="home-heading" text={headline} className="text-hero mt-6 max-w-[12ch] text-ink drop-shadow-[0_2px_18px_rgba(0,0,0,0.28)] sm:mt-7 sm:max-w-none" />
+          <HeroHeadline
+            id="home-heading"
+            text={headline}
+            className="text-hero mx-auto mt-5 max-w-[14ch] text-center text-ink drop-shadow-[0_2px_18px_rgba(0,0,0,0.28)] sm:mx-0 sm:mt-7 sm:max-w-none sm:text-left"
+          />
 
           <HeroFade delay={0.35}>
-            <p className="mt-5 max-w-xl text-[0.98rem] leading-relaxed text-slate-200 sm:mt-7 sm:text-base md:text-lg">{supporting}</p>
+            <p className="mx-auto mt-4 max-w-md text-[0.95rem] leading-relaxed text-slate-200 sm:mx-0 sm:mt-7 sm:max-w-xl sm:text-base md:text-lg">
+              {supporting}
+            </p>
           </HeroFade>
 
-          <HeroFade delay={0.45} className="mt-7 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center">
-            <LinkButton href={primaryCta.href} variant="secondary" className="w-full sm:w-auto">
-              {primaryCta.label}
-              <ArrowRight
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </LinkButton>
-            <LinkButton href={secondaryCta.href} variant="primary" className="w-full sm:w-auto">
-              {secondaryCta.label}
-            </LinkButton>
+          {/* Mobile-only portrait, between text and CTAs */}
+          <HeroFade delay={0.4} className="w-full sm:hidden">
+            <div
+              aria-hidden="true"
+              className="mx-auto mt-6 h-[300px] w-full max-w-[360px] bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-contain bg-bottom bg-no-repeat"
+            />
+          </HeroFade>
+
+          {/* CTA: glass card on mobile, plain row on larger screens */}
+          <HeroFade
+            delay={0.45}
+            className="mt-6 w-full rounded-2xl border border-white/15 bg-white/[0.04] p-4 shadow-[0_10px_40px_rgba(0,0,0,0.25)] backdrop-blur-md sm:mt-10 sm:w-auto sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none"
+          >
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+              <LinkButton href={primaryCta.href} variant="secondary" className="w-full sm:w-auto">
+                {primaryCta.label}
+                <ArrowRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </LinkButton>
+              <LinkButton href={secondaryCta.href} variant="primary" className="w-full sm:w-auto">
+                {secondaryCta.label}
+              </LinkButton>
+            </div>
           </HeroFade>
         </div>
       </Container>
@@ -62,7 +99,6 @@ export function Hero() {
         </span>
         <ChevronDown className="h-5 w-5" aria-hidden="true" />
       </a>
-
     </section>
   );
 }
