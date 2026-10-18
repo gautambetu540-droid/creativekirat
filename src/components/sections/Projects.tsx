@@ -28,7 +28,8 @@ export function Projects() {
             const initials = project.name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase();
             return (
               <Reveal as="li" key={project.name} delay={0.06 * (i % 3)} className="h-full">
-                <GlowCard className="h-full min-h-[22rem] p-7">\n                  <div className="relative z-[2] flex h-full flex-col">
+                <GlowCard className="h-full min-h-[22rem] p-7">
+                  <div className="relative z-[2] flex h-full flex-col">
                   <div className="flex items-center justify-between gap-4">
                     {project.logo ? (
                       project.url ? (
@@ -79,6 +80,7 @@ export function Projects() {
                   ) : (
                     <p className="mt-auto pt-6 text-xs text-mist">Project link coming soon</p>
                   )}
+                  </div>
                 </GlowCard>
               </Reveal>
             );
