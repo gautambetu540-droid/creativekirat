@@ -16,9 +16,9 @@ export function Hero() {
       {/* Kirat's supplied portrait is the hero visual; keep the face on the right and text on the left. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-cover bg-[position:62%_center] sm:bg-[position:60%_center]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-cover bg-[position:66%_center] sm:bg-[position:60%_center]"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-r from-[#061426] via-[#061426]/95 to-[#061426]/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-[linear-gradient(90deg,rgba(6,20,38,0.96)_0%,rgba(6,20,38,0.86)_48%,rgba(6,20,38,0.35)_100%)] sm:bg-gradient-to-r sm:from-[#061426] sm:via-[#061426]/95 sm:to-[#061426]/10" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-t from-[#061426]/95 via-transparent to-[#061426]/20" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-[radial-gradient(ellipse_at_75%_45%,transparent_10%,rgba(6,20,38,0.12)_72%)]" />
 
@@ -63,16 +63,6 @@ export function Hero() {
         <ChevronDown className="h-4 w-4" aria-hidden="true" />
       </a>
 
-      <style jsx>{`
-        @media (max-width: 639px) {
-          #home > div[aria-hidden="true"]:first-of-type {
-            background-position: 66% center;
-          }
-          #home > div[aria-hidden="true"]:nth-of-type(2) {
-            background-image: linear-gradient(90deg, rgba(6, 20, 38, 0.96) 0%, rgba(6, 20, 38, 0.86) 48%, rgba(6, 20, 38, 0.35) 100%);
-          }
-        }
-      `}</style>
     </section>
   );
 }
