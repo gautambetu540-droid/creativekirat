@@ -29,8 +29,8 @@ export function Projects() {
             return (
               <Reveal as="li" key={project.name} delay={0.06 * (i % 3)} className="h-full">
                 <GlowCard className="h-full min-h-[22rem] p-7">
-                  <div className="relative z-[2] flex h-full flex-col">
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex h-full flex-col">
+                    <div className="flex items-center justify-between gap-4">
                     {project.logo ? (
                       project.url ? (
                         <a
