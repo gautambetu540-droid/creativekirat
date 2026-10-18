@@ -35,9 +35,8 @@ export const aboutContent = {
   eyebrow: 'About',
   heading: 'Curiosity Drives My Creativity. Strategy Drives My SEO.',
   paragraphs: [
-    "I'm Kirat Singh Dang, an SEO professional focused on search engine optimization, content strategy, and digital growth.",
-    'My work includes keyword research, on-page and off-page SEO, technical optimization, backlink building, competitor analysis, and content improvement.',
-    'I enjoy combining analytical thinking with creative problem-solving to identify opportunities, improve website discoverability, and develop structured SEO workflows.',
+    "I'm Kirat Singh Dang, an SEO professional focused on search visibility and digital growth.",
+    'I work on keyword research, technical SEO, content optimization, and link building to help websites reach the right audience.',
   ],
   focus: [
     {
