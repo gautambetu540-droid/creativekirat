@@ -21,7 +21,7 @@ export const heroContent = {
   label: 'SEO EXECUTIVE · DIGITAL CONTENT CREATOR',
   headline: 'Turning Search Visibility Into Organic Growth.',
   supporting:
-    "Hi, I'm Kirat Singh Dang. I work across search engine optimization, keyword research, content optimization, and digital growth strategies to help websites improve their visibility and connect with relevant audiences.",
+    "I help websites grow through smarter SEO, useful content, and data-led digital strategy.",
   primaryCta: { label: 'Explore My Work', href: '#projects' },
   secondaryCta: { label: "Let's Connect", href: '#contact' },
   scrollLabel: 'Scroll to About section',
