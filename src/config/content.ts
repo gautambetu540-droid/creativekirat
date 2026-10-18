@@ -152,12 +152,8 @@ export const contactContent = {
   eyebrow: 'Contact',
   heading: "Let's Create Something Discoverable.",
   text: 'Have an SEO opportunity, a content idea, or a digital project in mind? Let\'s connect.',
-  emailLabel: 'Email Me',
   linkedinLabel: 'Connect on LinkedIn',
   instagramLabel: 'Follow on Instagram',
-  copyLabel: 'Copy email',
-  copiedMessage: 'Email address copied to clipboard.',
-  copyFailedMessage: 'Could not copy automatically. Please copy the address manually.',
 };
 
 export const notFoundContent = {
