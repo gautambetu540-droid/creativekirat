@@ -30,6 +30,6 @@ export const projects: Project[] = [
   {
     name: 'MEOWMATES', category: 'Digital Project', logo: '/project-logos/meowmates.png',
     description: 'A featured brand and digital project.',
-    url: null, tags: [], contributionVerified: false,
+    url: 'https://meowwmates.com/', tags: [], contributionVerified: false,
   },
 ];
