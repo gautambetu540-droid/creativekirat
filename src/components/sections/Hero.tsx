@@ -25,7 +25,7 @@ export function Hero() {
       <Container className="relative z-10 w-full">
         <div className="max-w-2xl sm:max-w-2xl lg:max-w-[48%]">
           <HeroFade>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/55 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-aqua shadow-lg backdrop-blur-md sm:text-xs">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/55 px-4 py-1.5 text-xs font-semibold tracking-[0.08em] text-aqua shadow-lg backdrop-blur-md sm:text-xs">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               {label}
             </p>
@@ -38,14 +38,14 @@ export function Hero() {
           </HeroFade>
 
           <HeroFade delay={0.45} className="mt-7 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center">
-            <LinkButton href={primaryCta.href} variant="primary" className="w-full sm:w-auto">
+            <LinkButton href={primaryCta.href} variant="secondary" className="w-full sm:w-auto">
               {primaryCta.label}
               <ArrowRight
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
                 aria-hidden="true"
               />
             </LinkButton>
-            <LinkButton href={secondaryCta.href} variant="secondary" className="w-full sm:w-auto">
+            <LinkButton href={secondaryCta.href} variant="primary" className="w-full sm:w-auto">
               {secondaryCta.label}
             </LinkButton>
           </HeroFade>
@@ -55,12 +55,12 @@ export function Hero() {
       <a
         href="#about"
         aria-label={scrollLabel}
-        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-mist transition-colors hover:text-ink sm:flex"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-slate-200/90 transition-colors hover:text-white sm:flex"
       >
-        <span className="flex h-10 w-6 justify-center rounded-full border border-white/25 bg-navy-950/30 pt-2 backdrop-blur-sm">
-          <span className="animate-scroll-dot h-2 w-1 rounded-full bg-aqua" />
+        <span className="flex h-12 w-8 justify-center rounded-full border border-white/50 bg-navy-950/50 pt-2.5 shadow-[0_0_22px_rgba(34,211,238,0.14)] backdrop-blur-sm">
+          <span className="animate-scroll-dot h-2.5 w-1.5 rounded-full bg-aqua" />
         </span>
-        <ChevronDown className="h-4 w-4" aria-hidden="true" />
+        <ChevronDown className="h-5 w-5" aria-hidden="true" />
       </a>
 
     </section>
