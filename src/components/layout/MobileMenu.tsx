@@ -50,7 +50,7 @@ export function MobileMenu({ open, onClose, active }: MobileMenuProps) {
           transition={{ duration: 0.25, ease: EASE_OUT }}
         >
           <div className="flex h-nav items-center justify-between px-5 sm:px-8">
-            <Logo onClick={onClose} label="Creative Kirat — back to top" />
+            <Logo showMark={false} onClick={onClose} label="Creative Kirat — back to top" />
             <button
               type="button"
               data-autofocus
