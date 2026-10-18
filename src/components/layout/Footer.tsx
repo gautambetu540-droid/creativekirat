@@ -1,6 +1,5 @@
 import { ArrowUpRight, Instagram, Linkedin } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { Logo } from '@/components/layout/Logo';
 import { activeSocials, navItems, siteConfig } from '@/config/site';
 import { externalLinkProps } from '@/lib/utils';
 
@@ -20,7 +19,7 @@ export function Footer() {
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 border-b border-navy-700/70 pb-10 md:grid-cols-[1.2fr_1fr_0.8fr] md:gap-8 lg:pb-12">
           <div className="max-w-sm">
-            <Logo />
+            <p className="text-xl font-bold tracking-tight text-ink">Creative<span className="text-electric">Kirat</span></p>
             <p className="mt-4 max-w-xs text-sm leading-7 text-mist">{siteConfig.footerTagline}</p>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-aqua">Strategy · Search · Storytelling</p>
           </div>
