@@ -34,7 +34,7 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex h-nav w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
-        <Logo />
+        <Logo showMark={false} />
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
