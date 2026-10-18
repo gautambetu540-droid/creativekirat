@@ -25,10 +25,10 @@ export function Footer() {
           </div>
           <nav aria-label="Footer navigation">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink">Explore</p>
-            <ul className="grid grid-cols-2 gap-x-5 gap-y-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
               {navItems.map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} className="group inline-flex min-h-[40px] items-center gap-1.5 text-sm text-mist transition-colors hover:text-ink">
+                  <a href={`#${item.id}`} className="group inline-flex min-h-11 items-center gap-1.5 py-2 pr-1 text-sm text-mist transition-colors hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aqua">
                     {item.label}
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
                   </a>
