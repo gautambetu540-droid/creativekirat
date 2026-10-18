@@ -1,73 +1,40 @@
-import { ArrowRight, ChevronDown, Link2, Search, Sparkles, Tag } from 'lucide-react';
+import { ArrowRight, ChevronDown, Sparkles } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { HeroFade, HeroHeadline } from '@/components/sections/HeroMotion';
 import { heroContent } from '@/config/content';
 
 export function Hero() {
-  const { label, headline, supporting, primaryCta, secondaryCta, decor, scrollLabel } = heroContent;
+  const { label, headline, supporting, primaryCta, secondaryCta, scrollLabel } = heroContent;
 
   return (
     <section
       id="home"
       aria-labelledby="home-heading"
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pb-24 pt-[calc(var(--nav-height)+3rem)]"
+      className="relative isolate flex min-h-[min(850px,100svh)] items-center overflow-hidden bg-navy-950 pb-24 pt-[calc(var(--nav-height)+3rem)] sm:min-h-[88svh] lg:min-h-[min(850px,100svh)]"
     >
-      {/* Background: grid with radial mask + ambient light */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="bg-grid mask-radial absolute inset-0 opacity-60" />
-        <div className="ambient-blob animate-drift-a left-[-10%] top-[5%] h-[28rem] w-[28rem] bg-electric" />
-        <div className="ambient-blob animate-drift-b right-[-8%] top-[30%] h-[24rem] w-[24rem] bg-aqua !opacity-[0.14]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-navy-950" />
-      </div>
+      {/* Kirat's supplied portrait is the hero visual; keep the face on the right and text on the left. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/kirat-singh-dang-seo-portfolio-hero.webp.png')] bg-cover bg-[position:62%_center] sm:bg-[position:60%_center]"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-r from-[#061426] via-[#061426]/95 to-[#061426]/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-t from-[#061426]/95 via-transparent to-[#061426]/20" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] bg-[radial-gradient(ellipse_at_75%_45%,transparent_10%,rgba(6,20,38,0.12)_72%)]" />
 
-      {/* Decorative floating SEO elements (desktop only) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[5] hidden lg:block">
-        <div className="animate-float absolute right-[6%] top-[22%] w-72 rounded-2xl border border-navy-700 bg-navy-900/80 p-3 shadow-2xl shadow-black/30 backdrop-blur">
-          <div className="flex items-center gap-2 rounded-xl border border-navy-700 bg-navy-950/80 px-3 py-2.5">
-            <Search className="h-4 w-4 text-aqua" />
-            <span className="text-sm text-mist">{decor.searchQuery}</span>
-            <span className="ml-auto h-4 w-px animate-pulse bg-aqua" />
-          </div>
-          <div className="mt-3 space-y-2 px-1">
-            <div className="h-2 w-4/5 rounded-full bg-navy-700" />
-            <div className="h-2 w-3/5 rounded-full bg-navy-700/70" />
-          </div>
-        </div>
-
-        <div className="animate-float-slow absolute right-[22%] top-[58%] flex flex-wrap gap-2">
-          {decor.keywordChips.map((chip) => (
-            <span
-              key={chip}
-              className="inline-flex items-center gap-1.5 rounded-full border border-navy-700 bg-navy-900/80 px-3 py-1.5 text-xs text-mist"
-            >
-              <Tag className="h-3 w-3 text-electric" />
-              {chip}
-            </span>
-          ))}
-        </div>
-
-        <div className="animate-float-slow absolute right-[5%] top-[66%] flex h-14 w-14 items-center justify-center rounded-2xl border border-navy-700 bg-navy-900/80">
-          <Link2 className="h-6 w-6 text-aqua" />
-        </div>
-        <div className="animate-float absolute right-[38%] top-[16%] flex h-12 w-12 items-center justify-center rounded-full border border-navy-700 bg-navy-900/80">
-          <Search className="h-5 w-5 text-electric" />
-        </div>
-      </div>
-
-      <Container>
-        <div className="max-w-4xl lg:max-w-[52rem]">
+      <Container className="relative z-10 w-full">
+        <div className="max-w-2xl lg:max-w-[48%]">
           <HeroFade>
-            <p className="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/70 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-aqua sm:text-xs">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/55 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-aqua shadow-lg backdrop-blur-md sm:text-xs">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               {label}
             </p>
           </HeroFade>
 
-          <HeroHeadline id="home-heading" text={headline} className="text-hero mt-7 text-ink" />
+          <HeroHeadline id="home-heading" text={headline} className="text-hero mt-7 text-ink drop-shadow-[0_2px_18px_rgba(0,0,0,0.28)]" />
 
           <HeroFade delay={0.35}>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-mist md:text-lg">{supporting}</p>
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-slate-200 md:text-lg">{supporting}</p>
           </HeroFade>
 
           <HeroFade delay={0.45} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -88,13 +55,24 @@ export function Hero() {
       <a
         href="#about"
         aria-label={scrollLabel}
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-mist transition-colors hover:text-ink sm:flex"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-mist transition-colors hover:text-ink sm:flex"
       >
-        <span className="flex h-10 w-6 justify-center rounded-full border border-navy-700 pt-2">
+        <span className="flex h-10 w-6 justify-center rounded-full border border-white/25 bg-navy-950/30 pt-2 backdrop-blur-sm">
           <span className="animate-scroll-dot h-2 w-1 rounded-full bg-aqua" />
         </span>
         <ChevronDown className="h-4 w-4" aria-hidden="true" />
       </a>
+
+      <style jsx>{`
+        @media (max-width: 639px) {
+          #home > div[aria-hidden="true"]:first-of-type {
+            background-position: 66% center;
+          }
+          #home > div[aria-hidden="true"]:nth-of-type(2) {
+            background-image: linear-gradient(90deg, rgba(6, 20, 38, 0.96) 0%, rgba(6, 20, 38, 0.86) 48%, rgba(6, 20, 38, 0.35) 100%);
+          }
+        }
+      `}</style>
     </section>
   );
 }
