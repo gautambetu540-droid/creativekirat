@@ -31,14 +31,20 @@ export function Projects() {
                 <GlowCard className="flex h-full min-h-[15rem] flex-col p-7">
                   <div className="flex items-center justify-between gap-4">
                     {project.logo ? (
-                      <a
-                        href={project.url ?? undefined}
-                        {...(project.url ? externalLinkProps : {})}
-                        aria-label={project.url ? `Visit ${project.name} website (opens in a new tab)` : `${project.name} logo`}
-                        className="relative flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-2xl border border-navy-700/80 bg-white p-2.5 transition-transform duration-300 group-hover:scale-[1.03]"
-                      >
-                        <Image src={project.logo} alt={`${project.name} logo`} fill sizes="72px" className="object-contain p-2" />
-                      </a>
+                      project.url ? (
+                        <a
+                          href={project.url}
+                          {...externalLinkProps}
+                          aria-label={`Visit ${project.name} website (opens in a new tab)`}
+                          className="relative flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-2xl border border-navy-700/80 bg-white p-2.5 transition-transform duration-300 group-hover:scale-[1.03]"
+                        >
+                          <Image src={project.logo} alt={`${project.name} logo`} fill sizes="72px" className="object-contain p-2" />
+                        </a>
+                      ) : (
+                        <span className="relative flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-2xl border border-navy-700/80 bg-white p-2.5">
+                          <Image src={project.logo} alt={`${project.name} logo`} fill sizes="72px" className="object-contain p-2" />
+                        </span>
+                      )
                     ) : (
                       <span aria-hidden="true" className="inline-flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-navy-700 bg-gradient-to-br from-navy-950 to-navy-800 text-lg font-bold tracking-tight text-ink">
                         {initials}
@@ -65,7 +71,7 @@ export function Projects() {
                       href={project.url}
                       {...externalLinkProps}
                       aria-label={`${projectsContent.visitLabel}: ${project.name} (opens in a new tab)`}
-                      className="mt-auto mt-6 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-electric/40 bg-electric/10 px-4 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-aqua/70 hover:bg-electric/20"
+                      className="mt-auto inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-electric/40 bg-electric/10 px-4 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-aqua/70 hover:bg-electric/20"
                     >
                       {projectsContent.visitLabel}
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
