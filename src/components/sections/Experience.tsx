@@ -44,7 +44,7 @@ export function Experience() {
                     <h3 className="mt-3 text-xl font-semibold tracking-tight text-ink md:text-2xl">
                       {item.role} <span className="text-mist">— {item.company}</span>
                     </h3>
-                    <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+                    <ul className="mt-5 grid grid-cols-1 gap-3">
                       {item.responsibilities.map((r) => (
                         <li key={r} className="flex gap-3 text-sm leading-relaxed text-mist md:text-[0.95rem]">
                           <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-electric" />
