@@ -68,10 +68,10 @@ export function ReelModal({ reel, onClose }: ReelModalProps) {
         // Backdrop click: the click target is the dialog element itself.
         if (e.target === e.currentTarget) onClose();
       }}
-      className="m-auto max-h-[100dvh] w-[min(92vw,420px)] overflow-visible bg-transparent p-0 text-ink open:flex"
+      className="m-auto max-h-[100dvh] w-[min(94vw,460px)] overflow-visible bg-transparent p-0 text-ink open:flex"
     >
       {reel ? (
-        <div className="flex max-h-[96dvh] w-full flex-col rounded-3xl border border-navy-700 bg-navy-900 p-4 shadow-2xl shadow-black/50 sm:p-5">
+        <div className="flex max-h-[96dvh] w-full min-w-0 flex-col rounded-3xl border border-navy-700 bg-navy-900 p-3 shadow-2xl shadow-black/50 sm:p-5">
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 id={titleId} className="text-base font-semibold tracking-tight text-ink">
               {reel.title}
@@ -88,8 +88,8 @@ export function ReelModal({ reel, onClose }: ReelModalProps) {
 
           {/* 9:16 reserved player area; height-capped so it fits short viewports */}
           <div
-            className="relative mx-auto aspect-[9/16] w-full max-w-full overflow-hidden rounded-2xl border border-navy-700 bg-navy-950"
-            style={{ maxHeight: 'calc(96dvh - 11rem)', maxWidth: 'calc((96dvh - 11rem) * 9 / 16)' }}
+            className="relative mx-auto aspect-[9/16] w-full max-w-full shrink overflow-hidden rounded-2xl border border-navy-700 bg-navy-950"
+            style={{ maxHeight: 'min(68dvh, 680px)', maxWidth: 'calc(min(68dvh, 680px) * 9 / 16)' }}
           >
             {state !== 'failed' ? (
               <iframe
